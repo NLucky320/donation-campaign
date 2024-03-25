@@ -10,7 +10,7 @@ const DonationCard = ({data}) => {
     return (
         <Card style={{backgroundColor: data.
 categoryBg
-}} className="w-full max-w-[48rem] flex-row">
+}} className="max-w-6xl mx-auto flex-row">
             
       <CardHeader
         shadow={false}
