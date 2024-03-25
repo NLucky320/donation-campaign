@@ -6,6 +6,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { NavLink } from 'react-router-dom';
 
 function NavList() {
   return (
@@ -16,9 +17,9 @@ function NavList() {
         color="blue-gray"
         className="p-1 font-medium"
       >
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
+        <NavLink to='/' className="flex items-center hover:text-blue-500 transition-colors">
           Home
-        </a>
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -26,9 +27,9 @@ function NavList() {
         color="blue-gray"
         className="p-1 font-medium"
       >
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
-        Donation
-        </a>
+        <NavLink to='/donation' className="flex items-center hover:text-blue-500 transition-colors">
+          Donation
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -36,16 +37,16 @@ function NavList() {
         color="blue-gray"
         className="p-1 font-medium"
       >
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
+        <NavLink to='/statistics' className="flex items-center hover:text-blue-500 transition-colors">
           Statistics
-        </a>
+        </NavLink>
       </Typography> 
     </ul>
   );
 }
 
 const NavBar = () => {
-    const [openNav, setOpenNav] = React.useState(false);
+  const [openNav, setOpenNav] = React.useState(false);
  
   const handleWindowResize = () =>
     window.innerWidth >= 960 && setOpenNav(false);
@@ -57,12 +58,13 @@ const NavBar = () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
-    return (
-        <Navbar className="mx-auto max-w-screen-xl px-6 py-3">
+
+  return (
+    <Navbar className="mx-auto max-w-screen-xl px-6 py-3">
       <div className="flex items-center justify-between text-blue-gray-900">
-       <div>
-            <img src='Resources/Logo.png' alt="" />
-       </div>
+        <div>
+          <img src='/Resources/Logo.png' alt="Logo" />
+        </div>
         <div className="hidden lg:block">
           <NavList />
         </div>
@@ -83,7 +85,7 @@ const NavBar = () => {
         <NavList />
       </Collapse>
     </Navbar>
-    );
+  );
 };
 
-export default NavBar;
+export default NavBar; 
